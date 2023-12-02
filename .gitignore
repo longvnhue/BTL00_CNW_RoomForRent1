@@ -1,2 +1,2 @@
-/src/webapp/WEB-INF/lib/*.jar
+src/webapp/WEB-INF/lib/*.jar
 
