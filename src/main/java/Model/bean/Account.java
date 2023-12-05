@@ -30,5 +30,12 @@ public class Account {
 	public void setId_role(String id_role) {
 		this.id_role = id_role;
 	}
+	public Account(String id_account, String username, String password, String id_role) {
+		super();
+		this.id_account = id_account;
+		this.username = username;
+		this.password = password;
+		this.id_role = id_role;
+	}
 	
 }

@@ -23,5 +23,11 @@ public class Ward {
 	public void setName_ward(String name_ward) {
 		this.name_ward = name_ward;
 	}
+	public Ward(String id_ward, String id_district, String name_ward) {
+		super();
+		this.id_ward = id_ward;
+		this.id_district = id_district;
+		this.name_ward = name_ward;
+	}
 	
 }

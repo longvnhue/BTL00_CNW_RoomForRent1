@@ -16,5 +16,10 @@ public class District {
 	public void setName_district(String name_district) {
 		this.name_district = name_district;
 	}
+	public District(String id_district, String name_district) {
+		super();
+		this.id_district = id_district;
+		this.name_district = name_district;
+	}
 	
 }

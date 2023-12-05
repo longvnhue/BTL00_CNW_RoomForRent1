@@ -17,4 +17,10 @@ public class Address {
 		this.id_ward = id_ward;
 	}
 	
+	public Address(String address, String id_ward) {
+		super();
+		this.address = address;
+		this.id_ward = id_ward;
+	}
+	
 }

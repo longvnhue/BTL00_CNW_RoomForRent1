@@ -65,5 +65,18 @@ public class Motel {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public Motel(String id_motel, String address, String img, String title, double area, String description, int price,
+			String phone_number, int status) {
+		super();
+		this.id_motel = id_motel;
+		this.address = address;
+		this.img = img;
+		this.title = title;
+		this.area = area;
+		this.description = description;
+		this.price = price;
+		this.phone_number = phone_number;
+		this.status = status;
+	}
 	
 }
