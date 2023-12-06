@@ -278,7 +278,7 @@ public class Motel_DAO {
 	
 	
 	///////////////////////////9. Get Motel by ward.name_ward + district.name_district (nullable) + motel.price
-	public ArrayList<Motel> GetMotel_FullFilter(String district_key, String ward_key, int PriceLower, int PriceUpper){
+	public ArrayList<Motel> GetMotel_FilterBy_District_Ward_Price(String district_key, String ward_key, int PriceLower, int PriceUpper){
 		ArrayList<Motel> res = new ArrayList<Motel>();
 		
 		try {
@@ -316,7 +316,7 @@ public class Motel_DAO {
 	
 	
 	/////////////////////////////////10. Get Motel by ward.name_ward + district.name_district (nullable) + motel.area
-	public ArrayList<Motel> GetMotel_FullFilter(String district_key, String ward_key, double AreaLower, double AreaUpper){
+	public ArrayList<Motel> GetMotel_FilterBy_District_Ward_Area(String district_key, String ward_key, double AreaLower, double AreaUpper){
 		ArrayList<Motel> res = new ArrayList<Motel>();
 		
 		try {
