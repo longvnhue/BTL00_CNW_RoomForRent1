@@ -33,8 +33,7 @@
         <ul class="navbar-nav navbar-nav-right">    
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-profile" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <img src="../img/Gura.jpg" alt="image">
-              <span class="d-none d-lg-inline">CielTan</span>
+              <span class="d-none d-lg-inline">Hello CielTan</span>
             </a>
           </li>
           <li class="nav-item nav-logout d-none d-lg-block">
@@ -55,7 +54,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="indexAdmin.jsp">
                 <span class="menu-title">Trang chủ</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
