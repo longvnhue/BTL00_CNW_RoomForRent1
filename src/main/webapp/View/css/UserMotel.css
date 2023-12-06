@@ -27,3 +27,13 @@
 	border-radius: 5px;
 	text-align: center;
 }
+
+.nav-hello-user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 18px;
+	font-weight: 700;
+	margin-top: 8px;
+}

@@ -12,11 +12,11 @@
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
 		<!-- Bootstrap CSS -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="View/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="../css/tiny-slider.css" rel="stylesheet">
-		<link href="../css/style.css" rel="stylesheet">
-		<link href="../css/UserMotel.css" rel="stylesheet">
+		<link href="View/css/tiny-slider.css" rel="stylesheet">
+		<link href="View/css/style.css" rel="stylesheet">
+		<link href="View/css/UserMotel.css" rel="stylesheet">
 		<title>Lọc nhà trọ</title>
 	</head>
 
@@ -26,7 +26,7 @@
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
-				<a class="navbar-brand" href="indexUser.jsp">Motel<span>.</span></a>
+				<a class="navbar-brand" href="index.html">Motel<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -35,14 +35,11 @@
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item">
-							<a class="nav-link" href="indexUser.jsp">Trang chủ</a>
+							<a class="nav-link" href="index.jsp">Trang chủ</a>
 						</li>
 						<li class="active"><a class="nav-link" href="filterMotel.jsp">Lọc nhà trọ</a></li>
-					</ul>
-
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="../img/user.svg"></a></li>
-						<li><span class="nav-hello-user">Hello user</span></li>
+						<li><a class="nav-link" href="View/Login-Register/login.jsp">Đăng nhập</a></li>
+						<li><a class="nav-link" href="View/Login-Register/register.jsp">Đăng ký</a></li>
 					</ul>
 				</div>
 			</div>
@@ -124,7 +121,7 @@
 		      		<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/1.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/1.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -138,7 +135,7 @@
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/2.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/2.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -152,7 +149,7 @@
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/3.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/3.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Kruzo Aero Chair</h3>
 							<strong class="product-price">$78.00</strong>
 
@@ -166,7 +163,7 @@
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/4.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/4.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Ergonomic Chair</h3>
 							<strong class="product-price">$43.00</strong>
 
@@ -181,7 +178,7 @@
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/5.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/5.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -195,7 +192,7 @@
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/6.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/6.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -209,7 +206,7 @@
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/7.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/7.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Kruzo Aero Chair</h3>
 							<strong class="product-price">$78.00</strong>
 
@@ -223,7 +220,7 @@
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/8.jpg" class="img-fluid product-thumbnail">
+							<img src="View/img/8.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Ergonomic Chair</h3>
 							<strong class="product-price">$43.00</strong>
 
@@ -244,13 +241,13 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="../img/sofa.png" alt="Image" class="img-fluid">
+					<img src="View/img/sofa.png" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="../img/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="View/img/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
 							<form action="#" class="row g-3">
 								<div class="col-auto">
@@ -352,9 +349,9 @@
 		<!-- End Footer Section -->	
 
 
-		<script src="../js/bootstrap.bundle.min.js"></script>
-		<script src="../js/tiny-slider.js"></script>
-		<script src="../js/custom.js"></script>
+		<script src="View/js/bootstrap.bundle.min.js"></script>
+		<script src="View/js/tiny-slider.js"></script>
+		<script src="View/js/custom.js"></script>
 	</body>
 
 </html>
