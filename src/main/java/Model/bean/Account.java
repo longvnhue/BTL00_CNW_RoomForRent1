@@ -1,17 +1,11 @@
 package Model.bean;
 
 public class Account {
-	private String id_account;
 	private String username;
 	private String password;
 	private String id_role;
 	
-	public String getId_account() {
-		return id_account;
-	}
-	public void setId_account(String id_account) {
-		this.id_account = id_account;
-	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -30,9 +24,8 @@ public class Account {
 	public void setId_role(String id_role) {
 		this.id_role = id_role;
 	}
-	public Account(String id_account, String username, String password, String id_role) {
+	public Account(String username, String password, String id_role) {
 		super();
-		this.id_account = id_account;
 		this.username = username;
 		this.password = password;
 		this.id_role = id_role;
