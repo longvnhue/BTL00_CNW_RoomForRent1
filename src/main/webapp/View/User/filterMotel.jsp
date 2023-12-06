@@ -94,8 +94,8 @@
 					<label class="title-combobox">Diện tích: </label>
 					<select class="combobox">
 						<option value="">--Hãy chọn diện tích--</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
-						<option value="Quận Cẩm Lệ">Quận Cẩm Lệ</option>
+						<option value="Quận Hải Châu">20 - 30</option>
+						<option value="Quận Cẩm Lệ">15 - 20</option>
 						<option value="Quận Hải Châu">Quận Hải Châu</option>
 					</select>
 				</div>
