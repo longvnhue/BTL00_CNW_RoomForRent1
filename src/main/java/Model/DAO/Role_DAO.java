@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import Model.bean.Role;
 
 
-public class Role_DAO {
+public class Role_DAO{
 	//GET INFO
 	/////////////////////////////1. Get FULL ROLE info
 	public ArrayList<Role> GetALLRole(){
@@ -90,5 +90,5 @@ public class Role_DAO {
 		}
 	}
 	
-								///////////////////////END///////////////////////
+														///////////////////////END///////////////////////
 }

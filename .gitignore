@@ -1,2 +1,3 @@
 src/webapp/WEB-INF/lib/*.jar
 
+.classpath

@@ -86,57 +86,78 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                  	<h2 class="card-title" style="margin-bottom: 0;">Danh sách thông tin nhà trọ</h2>
-                  	<button class="btn btn-primary"><a href="form_insertMotel.jsp" style="color: white; cursor: pointer; text-decoration: none;">Thêm phòng</a></button>
-                  </div>
-                  <div class="icons-list row">
-                    
-                   	<div class="col-sm-6 col-md-4 col-lg-3" style="justify-content: center"><img alt="" src="../img/1.jpg" style="width: auto; height: 200px;"></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">Cho thuê phòng trọ cho 2 - 3 người, giá sinh viên</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">369 Nguyễn Lương Bằng, phường khuê trung, quận cẩm lệ</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">insert mô tả here</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                    	Diện tích: 20 m2 <br><br>
-                    	Giá: 3 000 000 vnđ<br><br>
-                    	Sđt: 0123456789
-                    </div>
-                    
-                    
-                   	<div class="col-sm-6 col-md-4 col-lg-3" style="justify-content: center"><img alt="" src="../img/1.jpg" style="width: auto; height: 200px;"></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">Cho thuê phòng trọ cho 2 - 3 người, giá sinh viên</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">369 Nguyễn Lương Bằng, phường khuê trung, quận cẩm lệ</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">insert mô tả here</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                    	Diện tích: 20 m2 <br><br>
-                    	Giá: 3 000 000 vnđ<br><br>
-                    	Sđt: 0123456789
-                    </div>
-                    
-                    
-                   	<div class="col-sm-6 col-md-4 col-lg-3" style="justify-content: center"><img alt="" src="../img/1.jpg" style="width: auto; height: 200px;"></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">Cho thuê phòng trọ cho 2 - 3 người, giá sinh viên</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">369 Nguyễn Lương Bằng, phường khuê trung, quận cẩm lệ</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">insert mô tả here</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                    	Diện tích: 20 m2 <br><br>
-                    	Giá: 3 000 000 vnđ<br><br>
-                    	Sđt: 0123456789
-                    </div>
-                   
-                   
-                   	<div class="col-sm-6 col-md-4 col-lg-3" style="justify-content: center"><img alt="" src="../img/1.jpg" style="width: auto; height: 200px;"></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">Cho thuê phòng trọ cho 2 - 3 người, giá sinh viên</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">369 Nguyễn Lương Bằng, phường khuê trung, quận cẩm lệ</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">insert mô tả here</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                    	Diện tích: 20 m2 <br><br>
-                    	Giá: 3 000 000 vnđ<br><br>
-                    	Sđt: 0123456789
-                    </div>
-                    
-                    
-                  </div>
+                  <h2 class="card-title" style="text-align: center;">Thêm phòng</h2>
+					
+				  <form action="" method="post">
+					  <table class="table">
+					    <tr>
+					      <td>Ảnh phòng: </td>
+					      <td>
+					        <input type="file" class="form-input" name="img">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Tiêu đề: </td>
+					      <td>
+					        <input type="text" class="form-input" style="width: 100%;" name="title">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Diện tích: </td>
+					      <td>
+					        <input type="text" class="form-input" name="area">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Mô tả: </td>
+					      <td>
+					        <textarea rows="" cols="" class="form-input" name="description"></textarea>
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Giá tiền: </td>
+					      <td>
+					        <input type="text" class="form-input" name="price">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Số điện thoại: </td>
+					      <td>
+					        <input type="text" class="form-input" name="phone_number">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Địa chỉ: </td>
+					      <td>
+					        <input type="text" class="form-input" name="address">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Phường: </td>
+					      <td style="display:flex; justify-content: space-between;">
+					        <select class="form-select" name="ward">
+					          <option>--Hãy chọn phường--</option>
+					          <option>Khuê Trung</option>
+					          <option>Khuê Trung</option>
+					          <option>Khuê Trung</option>
+					        </select>
+					        <div style="width: 300px; display: flex; justify-content: space-between;">
+					        	Quận:                   
+						        <select class="form-select" name="district">
+						          <option>--Hãy chọn quận--</option>
+						          <option>Khuê Trung</option>
+						          <option>Khuê Trung</option>
+						          <option>Khuê Trung</option>
+						        </select>
+					        </div>
+					      </td>
+					    </tr>
+					  </table>
+					  <div style="margin: 50px 250px 0; display: flex; justify-content: space-between; align-items: center;">
+					  	<input type="submit" value="Thêm" class="btn btn-primary" style="cursor: pointer;">
+					 	<input type="reset" value="Cancel" class="btn btn-primary" style="cursor: pointer;">
+					  </div>
+					</form>
                 </div>
               </div>
             </div>

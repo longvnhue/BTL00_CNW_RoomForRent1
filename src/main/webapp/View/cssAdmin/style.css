@@ -8287,7 +8287,7 @@ pre {
     max-width: 16.66667%; }
   .col-lg-3 {
     flex: 0 0 25%;
-    max-width: 25%; }
+    max-width: 20%; }
   .col-lg-4 {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
@@ -14081,7 +14081,7 @@ address p {
 .card-title {
   color: #000000;
   margin-bottom: 1.125rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;}
 
 .card-subtitle {
   font-family: "pt-sans-regular", sans-serif;
@@ -15344,10 +15344,12 @@ dl {
     font-weight: initial; }
     .table thead th i {
       margin-left: 0.325rem; }
+   .table input, .table textarea {
+	   width: 100%;
+   }
   .table th,
   .table td {
     vertical-align: middle;
-    font-size: 0.875rem;
     line-height: 1; }
     .table th img,
     .table td img {
