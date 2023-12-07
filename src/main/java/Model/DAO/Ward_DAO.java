@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
 
 import Model.bean.Address;
 import Model.bean.Ward;
@@ -73,10 +74,12 @@ public class Ward_DAO {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/motel?characterEncoding=UTF-8&useUnicode=true", "root", "");
-			Statement sm = conn.createStatement();
-			String query = "";
-			ResultSet rs = sm.executeQuery(query);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/motel?characterEncoding=UTF-8&useUnicode=true", "root", "Hoangdanh@165");
+			
+			String query = "select w.id_ward, w.id_district, w.name_ward from ward w join district d on w.id_district = d.id_district where d.name_district = ?";
+			PreparedStatement sm = conn.prepareStatement(query);
+			sm.setString(1, name_district);
+			ResultSet rs = sm.executeQuery();
 			
 			while (rs.next()) {
 				res.add(new Ward(rs.getString("id_ward"), rs.getString("id_district"), rs.getNString("name_ward")));

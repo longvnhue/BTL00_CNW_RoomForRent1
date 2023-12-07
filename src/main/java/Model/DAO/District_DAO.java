@@ -18,7 +18,7 @@ public class District_DAO {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/motel?characterEncoding=UTF-8&useUnicode=true", "root", "");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/motel", "root", "Hoangdanh@165");
 			Statement sm = conn.createStatement();
 			
 			String query = "select * from district";

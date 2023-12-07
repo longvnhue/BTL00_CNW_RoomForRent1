@@ -60,7 +60,7 @@
 								<p class="mb-4">
 									Đây là trang web giúp sinh viên tìm nhà trọ trên thành phố Đà Nẵng
 								</p>
-								<p><a href="filterMotel.jsp" class="btn btn-secondary me-2">Khám phá</a></p>
+								<p><a href="${pageContext.request.contextPath}/FilterMotel_Controller?action=home" class="btn btn-secondary me-2">Khám phá</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">

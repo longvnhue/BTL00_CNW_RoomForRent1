@@ -1,24 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="Model.bean.District"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Untree.co">
+<link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+<meta name="description" content="" />
+<meta name="keywords" content="bootstrap, bootstrap4" />
 
-		<!-- Bootstrap CSS -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="../css/tiny-slider.css" rel="stylesheet">
-		<link href="../css/style.css" rel="stylesheet">
-		<link href="../css/UserMotel.css" rel="stylesheet">
-		<title>Lọc nhà trọ</title>
-	</head>
+<!-- Bootstrap CSS -->
+	<link href="<%=request.getContextPath()%>/View/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/View/css/tiny-slider.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/View/css/style.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/View/css/UserMotel.css" rel="stylesheet">
+	<title>Lọc nhà trọ</title>
+	
+
+</head>
 
 	<body>
 
@@ -26,7 +29,7 @@
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
-				<a class="navbar-brand" href="indexUser.jsp">Motel<span>.</span></a>
+				<a class="navbar-brand" href="${pageContext.request.contextPath}/FilterMotel_Controller">Motel<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -35,13 +38,13 @@
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item">
-							<a class="nav-link" href="indexUser.jsp">Trang chủ</a>
+							<a class="nav-link" href="<%=request.getContextPath()%>/View/User/indexUser.jsp">Trang chủ</a>
 						</li>
 						<li class="active"><a class="nav-link" href="filterMotel.jsp">Lọc nhà trọ</a></li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="../img/user.svg"></a></li>
+						<li><a class="nav-link" href="#"><img src="<%=request.getContextPath()%>/View/img/user.svg"></a></li>
 						<li><span class="nav-hello-user">Hello user</span></li>
 					</ul>
 				</div>
@@ -69,25 +72,33 @@
 
 		<!-- Start Filter Motel -->
 		<h2 class="filter-motel-title">Lọc theo thuộc tính</h2>
-		<form action="" method="post">
+		<form action="${pageContext.request.contextPath}/FilterMotel_Controller" method="post">
 			<div class="filter-motel">
-				<div class="filter-motel-container">
-					<label class="title-combobox">Quận: </label>
-					<select class="combobox" name="ward">
-						<option value="">--Hãy chọn quận--</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
-						<option value="Quận Cẩm Lệ">Quận Cẩm Lệ</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
-					</select>
-				</div>
-				
+			
 				<div class="filter-motel-container" name="district">
+				    <label class="title-combobox">Quận: </label>
+				    <select class="combobox" name="districtSelect" id="districtSelect">
+				        <option value="">--Hãy chọn quận--</option>
+				
+				        <% 
+				            // Lặp qua danh sách quận và tạo các option trực tiếp trong mã Java
+				            ArrayList<District> districtList = (ArrayList<District>)request.getAttribute("districtList");
+				        if(districtList != null) {
+				            for (District district : districtList) {
+				        %>
+				            <option value="<%= district.getName_district()%>"><%= district.getName_district() %></option>
+				        <%
+				            }
+				        }
+				        %>
+				    </select>
+				</div>
+
+				
+				<div class="filter-motel-container" name="ward">
 					<label class="title-combobox">Phường: </label>
-					<select class="combobox">
+					<select class="combobox" id="wardSelect">
 						<option value="">--Hãy chọn phường--</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
-						<option value="Quận Cẩm Lệ">Quận Cẩm Lệ</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
 					</select>
 				</div>
 				
@@ -95,9 +106,11 @@
 					<label class="title-combobox">Diện tích: </label>
 					<select class="combobox">
 						<option value="">--Hãy chọn diện tích--</option>
-						<option value="Quận Hải Châu">20 - 30</option>
-						<option value="Quận Cẩm Lệ">15 - 20</option>
-						<option value="Quận Hải Châu">Quận Hải Châu</option>
+						<option value="10 - 20">10 - 20 (m2)</option>
+						<option value="20 - 30">20 - 30 (m2)</option>
+						<option value="30 - 40">30 - 40 (m2)</option>
+						<option value="40 - 50">40 - 50 (m2)</option>
+						
 					</select>
 				</div>
 				
@@ -105,9 +118,9 @@
 					<label class="title-combobox">Giá: </label>
 					<select class="combobox">
 						<option value="">--Hãy chọn giá--</option>
-						<option value="Quận Hải Châu">1 500 000 - 2 000 000</option>
-						<option value="Quận Cẩm Lệ">2 000 000 - 2 500 000</option>
-						<option value="Quận Hải Châu">2 500 000 - 3 000 000</option>
+						<option value="500000 - 1000000">500000 - 1000000</option>
+						<option value="1000000 - 2000000">1000000 - 2000000</option>
+						<option value="2000000 - 3000000">2000000 - 3000000</option>
 					</select>
 				</div>
 				
@@ -124,7 +137,7 @@
 		      		<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/1.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/1.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -138,7 +151,7 @@
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/2.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/2.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -152,7 +165,7 @@
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/3.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/3.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Kruzo Aero Chair</h3>
 							<strong class="product-price">$78.00</strong>
 
@@ -166,7 +179,7 @@
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/4.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/4.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Ergonomic Chair</h3>
 							<strong class="product-price">$43.00</strong>
 
@@ -181,7 +194,7 @@
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/5.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/5.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -195,7 +208,7 @@
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/6.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/6.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
 							<strong class="product-price">$50.00</strong>
 
@@ -209,7 +222,7 @@
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/7.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/7.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Kruzo Aero Chair</h3>
 							<strong class="product-price">$78.00</strong>
 
@@ -223,7 +236,7 @@
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
 						<a class="product-item" href="#">
-							<img src="../img/8.jpg" class="img-fluid product-thumbnail">
+							<img src="<%=request.getContextPath()%>/View/img/8.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Ergonomic Chair</h3>
 							<strong class="product-price">$43.00</strong>
 
@@ -244,13 +257,13 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="../img/sofa.png" alt="Image" class="img-fluid">
+					<img src="<%=request.getContextPath()%>/View/img/sofa.png" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="../img/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="<%=request.getContextPath()%>/View/img/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
 							<form action="#" class="row g-3">
 								<div class="col-auto">
@@ -350,11 +363,51 @@
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+		<script>
+		    $(document).ready(function () {
+		        // Bắt sự kiện khi combobox quận thay đổi
+		        $("#districtSelect").change(function () {
+		            var selectedDistrict = $(this).val();
+		
+		            // Gửi yêu cầu Ajax để lấy danh sách phường
+		            $.ajax({
+		                url: "<%= request.getContextPath() %>/FilterMotel_Controller",
+		                method: "GET",
+		                data: { action: "selectDistrict", selectedDistrict: selectedDistrict },
+		                dataType: "json",
+		                success: function (data) {
+		                	$("#wardSelect").empty();
+
+		                    // Thêm option "--Hãy chọn phường--"
+		                    $("#wardSelect").append($('<option>', {
+		                        value: '',
+		                        text: '--Hãy chọn phường--'
+		                    }));
+		                    
+		                    $.each(data, function (index, ward) {
+		                        $("#wardSelect").append($('<option>', {
+		                            value: ward.name_ward,
+		                            text: ward.name_ward
+		                        }));
+		                    });
+		                },
+		                error: function (error) {
+		                    console.log("Error: " + error);
+		                }
+		            });
+		        });
+		    });
+		</script>
 
 
-		<script src="../js/bootstrap.bundle.min.js"></script>
-		<script src="../js/tiny-slider.js"></script>
-		<script src="../js/custom.js"></script>
+
+
+
+		<script src="<%=request.getContextPath()%>/View/js/bootstrap.bundle.min.js"></script>
+		<script src="<%=request.getContextPath()%>/View/js/tiny-slider.js"></script>
+		<script src="<%=request.getContextPath()%>/View/js/custom.js"></script>
 	</body>
 
 </html>
